@@ -1,28 +1,24 @@
 import React, { useState } from 'react';
-import { loginApi } from '../api/login';
 import useAuthStore from '../stores/authStore';
 import { useNavigate } from 'react-router-dom';
 
 function LoginPage() {
   const [id, setId] = useState('');
   const [pw, setPw] = useState('');
-  const [error, setError] = useState('');
-  const setLogin = useAuthStore((state) => state.setLogin);
+  const login = useAuthStore((state) => state.login);
   const navigate = useNavigate();
 
   const handleLogin = async () => {
-    try {
-      await loginApi(id, pw);
-      setLogin(true);
-      setError('');
-      alert('로그인 완료! 환영합니다.');
-      navigate('/');
-    } catch (e) {
-      setError(e.message);
-      setLogin(false);
+    const result = await login(id, pw);
+    if (result) {
       setId('');
       setPw('');
-      alert(`${error}`);
+      alert('로그인 성공');
+      navigate('/');
+    } else {
+      setId('');
+      setPw('');
+      alert('로그인 실패');
     }
   };
 
