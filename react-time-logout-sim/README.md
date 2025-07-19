@@ -1,12 +1,9 @@
-# React + Vite
+# 로그인 및 로그아웃 시뮬레이션 구현, 시간에 따른 자동 로그아웃 시뮬레이션 구현
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+* 사용 기술
+  * React, Vite, Zustand
 
-Currently, two official plugins are available:
+## 로그인
+* 임의로 만들어둔 id, pw가 일치하면 zustand를 활용해 isLoggedIn 변수 true로 변경
+* HomePage는 isLogggedIn 변수를 확인하고 로그인 상태(true, false)에 따라 다르게 문구 렌더링
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
