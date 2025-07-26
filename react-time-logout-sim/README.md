@@ -21,6 +21,7 @@
 <img width="356" height="255" alt="스크린샷 2025-07-26 오후 11 45 23" src="https://github.com/user-attachments/assets/db324c64-e7de-4e1b-a2d3-cb38e24e75de" />
 
 핸들러에 등록된 이벤트가 10초간 일어나지 않았을 때 alert 창을 띄우고 자동 로그아웃
+
 <img width="445" height="147" alt="스크린샷 2025-07-26 오후 11 45 48" src="https://github.com/user-attachments/assets/e9f31c4a-0c21-48c0-be9a-0ff97a980131" />
 
 
