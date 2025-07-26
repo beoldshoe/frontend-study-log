@@ -15,11 +15,17 @@ function HomePage() {
   const goLoginpage = () => {
     navigate('/login');
   };
+
+  const logout = () => {
+    alert('로그아웃 되었습니다.');
+    useAuthStore.getState().logout();
+  };
   useEffect(() => {
     if (isLoggedIn) {
       startInactivityWatcher();
     }
-  }, [isLoggedIn]);
+  }, [isLoggedIn, startInactivityWatcher]);
+  // 로그인 또는 새로고침 마다 감시 함수 실행
 
   return (
     <div>
@@ -30,9 +36,7 @@ function HomePage() {
           <p>남은 시간 : {remainingTime}초</p>
           <p>토큰 여부 : {localStorage.getItem('token')}</p>
           <p>로그인 여부 : {isLoggedIn.toString()}</p>
-          <button onClick={() => useAuthStore.getState().logout()}>
-            로그아웃
-          </button>
+          <button onClick={logout}>로그아웃</button>
         </>
       ) : (
         <>
